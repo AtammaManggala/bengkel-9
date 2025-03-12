@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\jnsKendaraan;
+use App\Models\kendaraan;
 use Illuminate\Http\Request;
 
 class JnsKendaraancontroller extends Controller
@@ -36,6 +37,7 @@ class JnsKendaraancontroller extends Controller
         $data->nm_jns_kendaraan = $request->jns_kendaraan;
         $post = $data->save();
         return redirect('jnskendaraan');
+
     }
 
     /**

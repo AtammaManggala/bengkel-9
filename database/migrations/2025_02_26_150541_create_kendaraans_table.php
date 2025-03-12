@@ -19,8 +19,6 @@ return new class extends Migration
             $table->string('no_rangka', 17);
             $table->string('kapasitas_mesin', 4);
             $table->string('transmisi', 2);
-            $table->integer('id_jns_kendaraan');
-            $table->integer('id_pemilik');
             $table->timestamps();
         });
     }

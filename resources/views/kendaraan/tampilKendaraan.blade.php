@@ -11,8 +11,6 @@
             <td>Nomor Rangka</td>
             <td>Kapasitas Mesin</td>
             <td>Transmisi</td>
-            <td>id Jenis Kendaraan</td>
-            <td>id Pemilik</td>
             <td>Aksi</td>
     </tr>
     @php $no = 1; @endphp
@@ -21,8 +19,15 @@
     <tr>
         <td>{{$no++}}</td>
          <td>{{$row->no_pol}}</td>
+         <td>{{$row->tahun_kendaraan}}</td>
+         <td>{{$row->no_mesin}}</td>
+         <td>{{$row->no_rangka}}</td>
+         <td>{{$row->kapasitas_mesin}}</td>
+         <td>{{$row->transmisi}}</td>
          <td>
-            <!-- <a href="{{route('jnskendaraan.edit',$row->id_jns_kendaraan)}}">update</a>   -->
+            <a href="{{route('kendaraan.edit',$row->id_kendaraan)}}">update</a>  
+            |  
+            <a>delete</a>
         </td>
     </tr>
     @endforeach

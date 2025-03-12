@@ -35,6 +35,11 @@ class kendaraancontroller extends Controller
         //insert ke sql
         $data = new kendaraan();
         $data->no_pol = $request->kendaraan;
+        $data->tahun_kendaraan = $request->thn_kendaraan;
+        $data->no_mesin = $request->no_mesin_kendaraan;
+        $data->no_rangka = $request->no_rangka_kendaraan;
+        $data->kapasitas_mesin = $request->kapasitas_mesin_kendaraan;
+        $data->transmisi = $request->transmisi_kendaraan;
         $post = $data->save();
         return redirect('kendaraan');
     }

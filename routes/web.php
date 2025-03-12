@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
 //jenis kendaraan
@@ -30,8 +30,8 @@ route::get('/jnsKendaraan/delete/{id}', [JnsKendaraancontroller::class, 'destroy
 
 //kendaraan
 route::get('/kendaraan', [kendaraancontroller::class, 'index'])->name('kendaraan.index');
-route::get('/kendaraan', [kendaraancontroller::class, 'create'])->name('kendaraan.create');
-route::post('/kendaraan', [kendaraancontroller::class, 'store'])->name('kendaraan.store');
+route::get('/kendaraan/add', [kendaraancontroller::class, 'create'])->name('kendaraan.create');
+route::post('/kendaraan/add', [kendaraancontroller::class, 'store'])->name('kendaraan.store');
 
 
 
