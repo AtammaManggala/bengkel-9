@@ -27,7 +27,7 @@
          <td>
             <a href="{{route('kendaraan.edit',$row->id_kendaraan)}}">update</a>  
             |  
-            <a>delete</a>
+            <a href="{{route('kendaraan.delete',$row->id_kendaraan)}}">delete</a>
         </td>
     </tr>
     @endforeach

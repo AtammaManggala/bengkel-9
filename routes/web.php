@@ -32,6 +32,9 @@ route::get('/jnsKendaraan/delete/{id}', [JnsKendaraancontroller::class, 'destroy
 route::get('/kendaraan', [kendaraancontroller::class, 'index'])->name('kendaraan.index');
 route::get('/kendaraan/add', [kendaraancontroller::class, 'create'])->name('kendaraan.create');
 route::post('/kendaraan/add', [kendaraancontroller::class, 'store'])->name('kendaraan.store');
+route::get('/kendaraan/edit/{id}', [kendaraancontroller::class, 'edit'])->name('kendaraan.edit');
+route::post('/kendaraan/edit/{id}', [kendaraancontroller::class, 'update'])->name('kendaraan.update');
+route::get('/kendaraan/delete/{id}', [kendaraancontroller::class, 'destroy'])->name('kendaraan.delete');
 
 
 

@@ -18,7 +18,5 @@ class kendaraan extends Model
             'no_rangka',
             'kapasitas mesin',
             'transmisi',
-            'id_jns_kendaraan',
-            'id_pemilik',
     ];
 }
