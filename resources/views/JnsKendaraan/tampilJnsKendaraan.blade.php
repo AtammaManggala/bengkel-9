@@ -36,16 +36,22 @@
           <div class="container-fluid">
             <!--begin::Row-->
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <div class="card mb-4">
                     <div class="card-header">
-                         <h3 class="card-title">Data Keseluruhan Jenis Kendaraan</h3>
+                      <div class="row">
+                          <div class="col-11">
+                            <h3 class="card-title">Data Keseluruhan Jenis Kendaraan</h3>
+                          </div>
+                          <div class="col-1">
+                            <a href="{{route('jnsKendaraan.create')}}">
+                              <input type="button" value="Tambah" class="btn btn-success">
+                            </a>  
+                          </div>
+                      </div>
                     </div>
-                    <div class="card-body p-0">
-                                <a href="{{route('jnsKendaraan.create')}}">
-                            <input type="button" value="Tambah">
-                        </a>
 
+                    <div class="card-body p-0">
                         <table class="table table-striped">
                             <tr>
                                     <td>No</td>
@@ -59,9 +65,11 @@
                                 <td>{{$no++}}</td>
                                 <td>{{$row->nm_jns_kendaraan}}</td>
                                 <td>
-                                    <a href="{{route('jnskendaraan.edit',$row->id_jns_kendaraan)}}">update</a>  
+                                    <a href="{{route('jnskendaraan.edit',$row->id_jns_kendaraan)}}"
+                                    class="btn btn-warning">update</a>  
                                     |  
-                                    <a href="{{route('jnskendaraan.delete',$row->id_jns_kendaraan)}}">delete</a>
+                                    <a href="{{route('jnskendaraan.delete',$row->id_jns_kendaraan)}}" 
+                                    class="btn btn-danger">delete</a>
                                 </td>
                             </tr>
                             @endforeach
