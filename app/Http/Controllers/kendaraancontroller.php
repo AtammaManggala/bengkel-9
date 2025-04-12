@@ -52,7 +52,10 @@ class kendaraancontroller extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // mencari data berdasarakan id
+        $data = kendaraan::where('id_kendaraan', '=', $id)
+        ->get();
+        return view('kendaraan.updatekendaraan', compact('data', 'id'));
     }
 
     /**
@@ -61,6 +64,16 @@ class kendaraancontroller extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $data = kendaraan::where('id_kendaraan', '=', $id);
+        $data->update([
+            'no_pol' => $request->kendaraan,
+            'tahun_kendaraan' => $request->thn_kendaraan,
+            'no_mesin' => $request->no_mesin_kendaraan,
+            'no_rangka' => $request->no_rangka_kendaraan,
+            'kapasitas_mesin' => $request->kapasitas_mesin_kendaraan,
+            'transmisi' => $request->transmisi_kendaraan,
+        ]);
+        return redirect('kendaraan');
     }
 
     /**
@@ -68,6 +81,9 @@ class kendaraancontroller extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        //menghapus table/data
+        $data = kendaraan::where('id_kendaraan', '=', $id);
+        $data->delete();
+        return redirect('kendaraan');
     }
 }
