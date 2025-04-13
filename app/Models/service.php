@@ -39,6 +39,6 @@ class service extends Model
 
     public function detail_services()
     {
-        return $this->hasMany(Service::class, 'id_service');
+        return $this->hasMany(DetailService::class, 'id_service');
     }
 }
