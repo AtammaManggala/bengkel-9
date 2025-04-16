@@ -10,6 +10,7 @@
             <td>Alamat</td>
             <td>Nomor Induk Kependudukan</td>
             <td>Nomor Handphone</td>
+            <td>Aksi</td>
     </tr>
     @php $no = 1; @endphp
     @foreach($data as $row)
