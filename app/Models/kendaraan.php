@@ -16,7 +16,7 @@ class kendaraan extends Model
             'tahun_kendaraan',
             'no_mesin',
             'no_rangka',
-            'kapasitas mesin',
+            'kapasitas_mesin',
             'transmisi',
     ];
 }
