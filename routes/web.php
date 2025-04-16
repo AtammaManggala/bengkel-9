@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\detailServicecontroller;
 use App\Http\Controllers\JnsKendaraancontroller;
 use App\Http\Controllers\jnsServicecontroller;
 use App\Http\Controllers\kendaraancontroller;
@@ -72,3 +73,11 @@ route::post('/jnsservice/add', [jnsServicecontroller::class, 'store'])->name('jn
 route::get('/jnsservice/edit/{id}', [jnsServicecontroller::class, 'edit'])->name('jnsService.edit');
 route::post('/jnsservice/edit/{id}', [jnsServicecontroller::class, 'update'])->name('jnsService.update');
 route::get('/jnsservice/delete/{id}', [jnsServicecontroller::class, 'destroy'])->name('jnsService.delete');
+
+//detail service
+route::get('/detailservice', [detailServicecontroller::class, 'index'])->name('detailService.index');
+route::get('/detailservice/add', [detailServicecontroller::class, 'create'])->name('detailService.create');
+route::post('/detailservice/add', [detailServicecontroller::class, 'store'])->name('detailService.store');
+route::get('/detailservice/edit/{id}', [detailServicecontroller::class, 'edit'])->name('detailService.edit');
+route::post('/detailservice/edit/{id}', [detailServicecontroller::class, 'update'])->name('detailService.update');
+route::get('/detailservice/delete/{id}', [detailServicecontroller::class, 'destroy'])->name('detailService.delete');
