@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\JnsKendaraancontroller;
+use App\Http\Controllers\jnsServicecontroller;
 use App\Http\Controllers\kendaraancontroller;
 use App\Http\Controllers\mekanikcontroller;
 use App\Http\Controllers\pemilikcontroller;
@@ -63,3 +64,11 @@ route::post('/service/add', [servicecontroller::class, 'store'])->name('service.
 route::get('/service/edit/{id}', [servicecontroller::class, 'edit'])->name('service.edit');
 route::post('/service/edit/{id}', [servicecontroller::class, 'update'])->name('service.update');
 route::get('/service/delete/{id}', [servicecontroller::class, 'destroy'])->name('service.delete');
+
+//jenis service
+route::get('/jnsservice', [jnsServicecontroller::class, 'index'])->name('jnsService.index');
+route::get('/jnsservice/add', [jnsServicecontroller::class, 'create'])->name('jnsService.create');
+route::post('/jnsservice/add', [jnsServicecontroller::class, 'store'])->name('jnsService.store');
+route::get('/jnsservice/edit/{id}', [jnsServicecontroller::class, 'edit'])->name('jnsService.edit');
+route::post('/jnsservice/edit/{id}', [jnsServicecontroller::class, 'update'])->name('jnsService.update');
+route::get('/jnsservice/delete/{id}', [jnsServicecontroller::class, 'destroy'])->name('jnsService.delete');
