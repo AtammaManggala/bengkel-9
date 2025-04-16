@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\JnsKendaraancontroller;
 use App\Http\Controllers\kendaraancontroller;
+use App\Http\Controllers\mekanikcontroller;
 use App\Http\Controllers\pemilikcontroller;
 use App\Models\jnsKendaraan;
 use Illuminate\Support\Facades\Route;
@@ -45,4 +46,10 @@ route::get('/pemilik/edit/{id}', [pemilikcontroller::class, 'edit'])->name('pemi
 route::post('/pemilik/edit/{id}', [pemilikcontroller::class, 'update'])->name('pemilik.update');
 route::get('/pemilik/delete/{id}', [pemilikcontroller::class, 'destroy'])->name('pemilik.delete');
 
-
+//mekanik 
+route::get('/mekanik', [mekanikcontroller::class, 'index'])->name('mekanik.index');
+route::get('/mekanik/add', [mekanikcontroller::class, 'create'])->name('mekanik.create');
+route::post('/mekanik/add', [mekanikcontroller::class, 'store'])->name('mekanik.store');
+route::get('/mekanik/edit/{id}', [mekanikcontroller::class, 'edit'])->name('mekanik.edit');
+route::post('/mekanik/edit/{id}', [mekanikcontroller::class, 'update'])->name('mekanik.update');
+route::get('/mekanik/delete/{id}', [mekanikcontroller::class, 'destroy'])->name('mekanik.delete');
