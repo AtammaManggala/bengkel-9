@@ -33,10 +33,10 @@ class pemilikcontroller extends Controller
         //insert ke sql
         $data = new pemilik();
         $data->nm_pemilik = $request->pemilik;
-        $data->tgl_lahir = $request->tanggal_lahir;
-        $data->alamat = $request->alamat_pemilik;
-        $data->nik = $request->nik_pemilik;
-        $data->no_hp = $request->no_hp_pemilik;
+        $data->tgl_lahir = $request->tgl_lahir;
+        $data->alamat = $request->alamat;
+        $data->nik = $request->nik;
+        $data->no_hp = $request->no_hp;
         $post = $data->save();
         return redirect('pemilik');
     }
@@ -70,10 +70,10 @@ class pemilikcontroller extends Controller
         $data = pemilik::where('id_pemilik', '=', $id);
         $data->update([
             'nm_pemilik' => $request->pemilik,
-            'tgl_lahir' => $request->tanggal_lahir,
-            'alamat' => $request->alamat_pemilik,
-            'nik' => $request->nik_pemilik,
-            'no_hp' => $request->nomor_hp_pemilik,
+            'tgl_lahir' => $request->tgl_lahir,
+            'alamat' => $request->alamat,
+            'nik' => $request->nik,
+            'no_hp' => $request->no_hp,
         ]);
         return redirect('pemilik');
     }
