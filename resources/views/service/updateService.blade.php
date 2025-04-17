@@ -1,21 +1,102 @@
-@foreach($data as $row)
-<form action="{{route('service.update',$id)}}" method="post" name="tambah">
-    @csrf 
-    <label for="">Jenis Kendaraan : </label>
-    <input type="text" name="service" id="" value="{{$row->jns_kendaraan}}"><br>
+@include('layout.header')
+    <!--begin::App Wrapper-->
+    <div class="app-wrapper">
+      <!--begin::Header-->
+      @include('layout.navbar')
+      
+      <!--end::Header-->
+      <!--begin::Sidebar-->
+      @include('layout.sidebar')
+      
+      <!--end::Sidebar-->
+      <!--begin::App Main-->
+      <main class="app-main">
+
+      <div class="app-content-header">
+          <!--begin::Container-->
+          <div class="container-fluid">
+            <!--begin::Row-->
+            <div class="row">
+              <div class="col-sm-6"><h3 class="mb-0">Tambah Jenis Service</h3></div>
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-end">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Tambah Jenis Service</li>
+                </ol>
+              </div>
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Container-->
+        </div>
+
+
+        <div class="app-content">
+        <!--begin::Container-->
+            <div class="container-fluid">
+                    <!--begin::Row-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card card-primary card-outline mb-4">
+                                <!--begin::Header-->
+                                <div class="card-header"><div class="card-title">Silahkan isi data</div></div>
+                                <!--end::Header-->
+                                <!--begin::Form-->
+                                @foreach($data as $row)
+                                <form action="{{route('service.update',$id)}}" method="post" name="tambah">
+                                @csrf
+                                <!--begin::Body-->
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label for="" class="form-label">Jenis Kendaraan</label>
+                                        <input type="text" class="form-control"  name="service" value="{{$row->jns_kendaraan}}"/><br>
+
+                                        <label for="" class="form-label">Keluhan</label>
+                                        <input type="text" class="form-control"  name="keluhan" value="{{$row->keluhan}}"/><br>
+
+                                        <label for="" class="form-label">Nama Mekanik</label>
+                                        <input type="text" class="form-control"  name="nm_mekanik" value="{{$row->nm_mekanik}}"/><br>
+
+                                        <label for="" class="form-label">Tanggal Masuk</label>
+                                        <input type="text" class="form-control"  name="tgl_masuk" value="{{$row->tgl_masuk}}"/><br>
+
+                                        <label for="" class="form-label">Tanggal Keluar</label>
+                                        <input type="text" class="form-control"  name="tgl_keluar" value="{{$row->tgl_keluar}}"/><br>
+
+                                    </div>
+                                </div>
+                                <!--end::Body-->
+                                <!--begin::Footer-->
+                                <div class="card-footer">
+                                    <button type="submit" name="simpan"  class="btn btn-primary">simpan bro</button>
+                                </div>
+                                <!--end::Footer-->
+                                </form>
+                                @endforeach
+                            <!--end::Form-->
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="app-content">
+          <!--begin::Container-->
+        
+</section>
+</main>
+      <!--end::App Main-->
+      <!--begin::Footer-->
+      @include('layout.coba')
+      
+
+      <!--end::Footer-->
+    </div>
+    @include('layout.footer')
     
-    <label for="">Keluhan : </label>
-    <input type="text" name="keluhan" id="" value="{{$row->keluhan}}"><br>
 
-    <label for="">Nama Mekanik : </label>
-    <input type="text" name="nm_mekanik" id="" value="{{$row->nm_mekanik}}"><br>
-
-    <label for="">Tanggal Masuk : </label>
-    <input type="text" name="tgl_masuk" id="" value="{{$row->tgl_masuk}}"><br>
-
-    <label for="">Tanggala Keluar : </label>
-    <input type="text" name="tgl_keluar" id="" value="{{$row->tgl_keluar}}"><br>
-
-    <input type="submit" name="simpan" value="simpan">
-</form>
-@endforeach
