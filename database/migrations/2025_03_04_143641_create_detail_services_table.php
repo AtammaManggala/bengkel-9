@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('detail_services', function (Blueprint $table) {
+        Schema::create('detailService', function (Blueprint $table) {
             $table->increments('id_detail_service', 12);
-            $table->integer('id_service');
             $table->string('sparepart', 50);
             $table->integer('harga');
             $table->timestamps();
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('detail_services');
+        Schema::dropIfExists('detailService');
     }
 };

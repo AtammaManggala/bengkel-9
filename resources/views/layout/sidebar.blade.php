@@ -43,15 +43,39 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="./index2.html" class="nav-link">
+                    <a href="{{route('kendaraan.index')}}" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
-                      <p>Dashboard v2</p>
+                      <p>Kendaraan</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="./index3.html" class="nav-link">
+                    <a href="{{route('pemilik.index')}}" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
-                      <p>Dashboard v3</p>
+                      <p>Pemilik Kendaraan</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{route('mekanik.index')}}" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Mekanik service</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{route('service.index')}}" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Service</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{route('jnsService.index')}}" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Jenis Service</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{route('detailService.index')}}" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Detail Service</p>
                     </a>
                   </li>
                 </ul>

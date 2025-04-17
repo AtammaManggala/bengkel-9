@@ -17,7 +17,7 @@
           <div class="container-fluid">
             <!--begin::Row-->
             <div class="row">
-              <div class="col-sm-6"><h3 class="mb-0">Mekanik</h3></div>
+              <div class="col-sm-6"><h3 class="mb-0">Detail Service</h3></div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
                   <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -41,10 +41,10 @@
                     <div class="card-header">
                       <div class="row">
                           <div class="col-11">
-                            <h3 class="card-title">Data Keseluruhan Mekanik</h3>
+                            <h3 class="card-title">Data Keseluruhan Detail Service</h3>
                           </div>
                           <div class="col-1">
-                            <a href="{{route('mekanik.create')}}">
+                            <a href="{{route('detailService.create')}}">
                               <input type="button" value="Tambah" class="btn btn-success">
                             </a>  
                           </div>
@@ -55,11 +55,8 @@
                         <table class="table table-striped">
                             <tr>
                                     <td>No</td>
-                                    <td>Nama Mekanik</td>
-                                    <td>Tanggal Lahir</td>
-                                    <td>Alamat</td>
-                                    <td>Nomor Induk Kependudukan</td>
-                                    <td>Nomor Handphone</td>
+                                    <td>Sparepart</td>
+                                    <td>Harga</td>
                                     <td>Aksi</td>
                             </tr>
                             @php $no = 1; @endphp
@@ -67,16 +64,13 @@
 
                             <tr>
                                 <td>{{$no++}}</td>
-                                <td>{{$row->nm_mekanik}}</td>
-                                <td>{{$row->tgl_lahir}}</td>
-                                <td>{{$row->alamat}}</td>
-                                <td>{{$row->nik}}</td>
-                                <td>{{$row->no_hp}}</td>
+                                <td>{{$row->sparepart}}</td>
+                                <td>{{$row->harga}}</td>
                                 <td>
-                                    <a href="{{route('mekanik.edit',$row->id_mekanik)}}"
+                                    <a href="{{route('detailService.edit',$row->id_detail_service)}}"
                                     class="btn btn-warning">update</a>  
                                     |  
-                                    <a href="{{route('mekanik.delete',$row->id_mekanik)}}" 
+                                    <a href="{{route('detailService.delete',$row->id_detail_service)}}" 
                                     class="btn btn-danger">delete</a>
                                 </td>
                             </tr>
@@ -106,4 +100,3 @@
     @include('layout.footer')
 
 
-    

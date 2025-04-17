@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\mekanik;
+use App\Models\service;
 use Illuminate\Http\Request;
 
-class mekanikcontroller extends Controller
+class servicecontroller extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data = mekanik::get();
+        $data = service::get();
         //dd($data);
-        return view('mekanik.tampilMekanik', compact('data'));
+        return view('service.tampilService', compact('data'));
     }
 
     /**
@@ -23,7 +24,7 @@ class mekanikcontroller extends Controller
     public function create()
     {
         //untuk menampilkan form
-        return view('mekanik.tambahMekanik');
+        return view('service.tambahService');
     }
 
     /**
@@ -32,14 +33,14 @@ class mekanikcontroller extends Controller
     public function store(Request $request)
     {
         //insert ke sql
-        $data = new mekanik();
-        $data->nm_mekanik = $request->mekanik;
-        $data->tgl_lahir = $request->tgl_lahir;
-        $data->alamat = $request->alamat;
-        $data->nik = $request->nik;
-        $data->no_hp = $request->no_hp;
+        $data = new service();
+        $data->jns_kendaraan = $request->service;
+        $data->keluhan = $request->keluhan;
+        $data->nm_mekanik = $request->nm_mekanik;
+        $data->tgl_masuk = $request->tgl_masuk;
+        $data->tgl_keluar = $request->tgl_keluar;
         $post = $data->save();
-        return redirect('mekanik');
+        return redirect('service');
     }
 
     /**
@@ -56,9 +57,9 @@ class mekanikcontroller extends Controller
     public function edit(string $id)
     {
         //mencari data berdasarkan id
-        $data = mekanik::where('id_mekanik', '=', $id)
+        $data = service::where('id_service', '=', $id)
         ->get();
-        return view('mekanik.updatemekanik', compact('data', 'id'));
+        return view('service.updateService', compact('data', 'id'));
     }
 
     /**
@@ -67,15 +68,15 @@ class mekanikcontroller extends Controller
     public function update(Request $request, string $id)
     {
         //
-        $data = mekanik::where('id_mekanik', '=', $id);
+        $data = service::where('id_service', '=', $id);
         $data->update([
-            'nm_mekanik' => $request->mekanik,
-            'tgl_lahir' => $request->tgl_lahir,
-            'alamat' => $request->alamat,
-            'nik' => $request->nik,
-            'no_hp' => $request->no_hp,
+            'jns_kendaraan' => $request->service,
+            'keluhan' => $request->keluhan,
+            'nm_mekanik' => $request->nm_mekanik,
+            'tgl_masuk' => $request->tgl_masuk,
+            'tgl_keluar' => $request->tgl_keluar,
         ]);
-        return redirect('mekanik');
+        return redirect('service');
     }
 
     /**
@@ -83,9 +84,9 @@ class mekanikcontroller extends Controller
      */
     public function destroy(string $id)
     {
-        // menghapus table/data
-        $data = mekanik::where('id_mekanik', '=', $id);
+        //menghapus table/data
+        $data = service::where('id_service', '=', $id);
         $data->delete();
-        return redirect('mekanik');
+        return redirect('service');
     }
 }

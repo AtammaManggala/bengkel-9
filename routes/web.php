@@ -1,10 +1,14 @@
 <?php
 
+use App\Http\Controllers\detailServicecontroller;
 use App\Http\Controllers\JnsKendaraancontroller;
+use App\Http\Controllers\jnsServicecontroller;
 use App\Http\Controllers\kendaraancontroller;
 use App\Http\Controllers\mekanikcontroller;
 use App\Http\Controllers\pemilikcontroller;
+use App\Http\Controllers\servicecontroller;
 use App\Models\jnsKendaraan;
+use App\Models\service;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,3 +57,27 @@ route::post('/mekanik/add', [mekanikcontroller::class, 'store'])->name('mekanik.
 route::get('/mekanik/edit/{id}', [mekanikcontroller::class, 'edit'])->name('mekanik.edit');
 route::post('/mekanik/edit/{id}', [mekanikcontroller::class, 'update'])->name('mekanik.update');
 route::get('/mekanik/delete/{id}', [mekanikcontroller::class, 'destroy'])->name('mekanik.delete');
+
+//service 
+route::get('/service', [servicecontroller::class, 'index'])->name('service.index');
+route::get('/service/add', [servicecontroller::class, 'create'])->name('service.create');
+route::post('/service/add', [servicecontroller::class, 'store'])->name('service.store');
+route::get('/service/edit/{id}', [servicecontroller::class, 'edit'])->name('service.edit');
+route::post('/service/edit/{id}', [servicecontroller::class, 'update'])->name('service.update');
+route::get('/service/delete/{id}', [servicecontroller::class, 'destroy'])->name('service.delete');
+
+//jenis service
+route::get('/jnsservice', [jnsServicecontroller::class, 'index'])->name('jnsService.index');
+route::get('/jnsservice/add', [jnsServicecontroller::class, 'create'])->name('jnsService.create');
+route::post('/jnsservice/add', [jnsServicecontroller::class, 'store'])->name('jnsService.store');
+route::get('/jnsservice/edit/{id}', [jnsServicecontroller::class, 'edit'])->name('jnsService.edit');
+route::post('/jnsservice/edit/{id}', [jnsServicecontroller::class, 'update'])->name('jnsService.update');
+route::get('/jnsservice/delete/{id}', [jnsServicecontroller::class, 'destroy'])->name('jnsService.delete');
+
+//detail service
+route::get('/detailservice', [detailServicecontroller::class, 'index'])->name('detailService.index');
+route::get('/detailservice/add', [detailServicecontroller::class, 'create'])->name('detailService.create');
+route::post('/detailservice/add', [detailServicecontroller::class, 'store'])->name('detailService.store');
+route::get('/detailservice/edit/{id}', [detailServicecontroller::class, 'edit'])->name('detailService.edit');
+route::post('/detailservice/edit/{id}', [detailServicecontroller::class, 'update'])->name('detailService.update');
+route::get('/detailservice/delete/{id}', [detailServicecontroller::class, 'destroy'])->name('detailService.delete');

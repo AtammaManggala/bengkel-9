@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class jnsService extends Model
+class detailService extends Model
 {
     use HasFactory;
-    protected $table = 'jns_service';
+    protected $table = 'detailService';
 
     protected $fillable = [
-        'id_jns_service',
-        'jns_service',
-        'keterangan',
+        'id_detail_service',
+        'sparepart',
+        'harga',
     ];
 }
